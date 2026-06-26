@@ -1,0 +1,6 @@
+{
+  "view.name": "Javadoc Preview",
+  "command.openSettings.title": "Javadoc Lens: Open Settings",
+  "command.refreshView.title": "Javadoc Lens: Refresh",
+  "config.debounceMs.description": "Milliseconds to wait after the cursor stops moving before rendering Javadoc."
+}

@@ -1,0 +1,94 @@
+{
+  "name": "javadoc-lens",
+  "displayName": "Javadoc Lens",
+  "description": "Render Javadoc comments from Java source files as HTML in the VS Code bottom panel",
+  "version": "0.0.1",
+  "publisher": "nobuyuki-inaba",
+  "icon": "images/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nobuyuki-Inaba/javadoc-lens.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "java",
+    "javadoc",
+    "documentation",
+    "preview"
+  ],
+  "activationEvents": [
+    "onLanguage:java"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "panel": [
+        {
+          "id": "javadocLensPanel",
+          "title": "Javadoc Lens",
+          "icon": "$(book)"
+        }
+      ]
+    },
+    "views": {
+      "javadocLensPanel": [
+        {
+          "type": "webview",
+          "id": "javadocLens.previewView",
+          "name": "%view.name%"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "javadocLens.openSettings",
+        "title": "%command.openSettings.title%"
+      },
+      {
+        "command": "javadocLens.refreshView",
+        "title": "%command.refreshView.title%",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "javadocLens.refreshView",
+          "when": "view == javadocLens.previewView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Javadoc Lens",
+      "properties": {
+        "javadocLens.debounceMs": {
+          "type": "number",
+          "default": 400,
+          "minimum": 100,
+          "maximum": 2000,
+          "description": "%config.debounceMs.description%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build:ext": "esbuild src/extension.ts --bundle --outfile=out/extension.js --format=cjs --platform=node --external:vscode --target=node20 --legal-comments=inline",
+    "compile": "tsc -p tsconfig.build.json --noEmit && npm run build:ext",
+    "watch": "npm run build:ext -- --watch",
+    "package": "npm run compile && vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.28.0",
+    "typescript": "^5.4.0"
+  }
+}

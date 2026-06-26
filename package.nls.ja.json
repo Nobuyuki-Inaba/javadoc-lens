@@ -1,0 +1,6 @@
+{
+  "view.name": "Javadoc プレビュー",
+  "command.openSettings.title": "Javadoc Lens: 設定を開く",
+  "command.refreshView.title": "Javadoc Lens: 更新",
+  "config.debounceMs.description": "カーソルが止まってから Javadoc を描画するまでの待機時間（ミリ秒）。"
+}
