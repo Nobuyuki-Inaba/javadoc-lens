@@ -1,36 +1,38 @@
 # Javadoc Lens
 
-Javadoc コメントを Java ソースファイルから読み取り、VS Code のボトムパネルに HTML でリアルタイム表示する拡張機能です。
+A VS Code extension that reads Javadoc comments directly from Java source files and renders them as HTML in the bottom panel in real time.
 
-![スクリーンショット](images/screenshot.png)
+![Screenshot](images/screenshot.png)
 
-## 機能
+[日本語版 README はこちら](README.ja.md)
 
-- カーソルを置くだけで、その位置のメソッド・クラス・フィールドの Javadoc を自動表示
-- `<table>`、`<b>`、`<pre>` などの HTML タグをそのままレンダリング
-- `{@code}`、`{@link}`、`{@literal}` などのインラインタグに対応
-- `@param`、`@return`、`@throws`、`@deprecated` などのブロックタグを見やすく整形
-- 別ファイルに定義されたクラス・メソッドも、定義ジャンプ経由で Javadoc を表示
+## Features
 
-## 使い方
+- Automatically displays the Javadoc for the method, class, or field under the cursor
+- Renders HTML tags such as `<table>`, `<b>`, and `<pre>` as-is
+- Supports inline tags: `{@code}`, `{@link}`, `{@literal}`
+- Formats block tags — `@param`, `@return`, `@throws`, `@deprecated` — into readable sections
+- Follows definition jumps to show Javadoc for symbols defined in other files
 
-1. Java ファイルを開く
-2. ボトムパネルの **JAVADOC LENS** タブを選択
-3. Javadoc コメントがあるメソッドやクラスにカーソルを移動すると、パネルに内容が表示されます
+## Usage
 
-パネルが見つからない場合は、コマンドパレット（`Ctrl+Shift+P` / `Cmd+Shift+P`）から **Javadoc Lens: Open Settings** を実行してください。
+1. Open a Java file
+2. Select the **JAVADOC LENS** tab in the bottom panel
+3. Move the cursor to any method or class with a Javadoc comment — the panel updates automatically
 
-## 設定
+If the panel is not visible, run **Javadoc Lens: Open Settings** from the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
 
-| 設定項目 | 説明 | デフォルト |
+## Settings
+
+| Setting | Description | Default |
 |---|---|---|
-| `javadocLens.debounceMs` | カーソル移動から表示更新までの遅延（ミリ秒） | `400` |
+| `javadocLens.debounceMs` | Delay in milliseconds between cursor movement and panel update | `400` |
 
-## 動作要件
+## Requirements
 
-- VS Code 1.85.0 以上
-- Java ファイル（`.java`）を開いたときに自動的に有効化されます
+- VS Code 1.85.0 or later
+- Activates automatically when a Java file (`.java`) is opened
 
-## ライセンス
+## License
 
 MIT
