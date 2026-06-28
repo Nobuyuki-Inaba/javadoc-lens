@@ -4,6 +4,8 @@
 .github/**
 .gitignore
 .gitattributes
+CLAUDE.md
+DEVELOPMENT.md
 
 src/**
 scripts/**

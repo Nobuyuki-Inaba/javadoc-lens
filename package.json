@@ -2,7 +2,7 @@
   "name": "javadoc-lens",
   "displayName": "Javadoc Lens",
   "description": "Render Javadoc comments from Java source files as HTML in the VS Code bottom panel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "nobuyuki-inaba",
   "icon": "images/icon.png",
   "license": "MIT",
